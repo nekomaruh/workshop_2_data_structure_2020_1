@@ -26,8 +26,6 @@ void cerrarSistema(Interfaz *i){
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-
     Interfaz *i = new Interfaz();
     i->insertarAtencion("20000000-k");
     i->insertarAtencion("10000000-k");
@@ -37,13 +35,14 @@ int main() {
 
     while(connected){
         cout<<" Cliente:\n";
-        cout<<" [1] Ingresar rut\n";
+        cout<<"   [1] Ingresar rut\n";
         cout<<" Vendedor:\n";
-        cout<<" [2] Vender producto\n";
+        cout<<"   [2] Vender producto\n";
         cout<<" Encargado de bodega:\n";
-        cout<<" [3] Ingresar producto\n";
+        cout<<"   [3] Ingresar producto\n";
         cout<<" Cerrar sistema:\n";
-        cout<<" [4] Salir\n";
+        cout<<"   [4] Salir\n";
+        cout<<" Ingrese una opción: ";
         int option;
         try{
             cin>>option;
@@ -63,9 +62,9 @@ int main() {
                 break;
             case 4:
                 cerrarSistema(i);
+                connected = false;
                 break;
             default:
-                connected = false;
                 break;
         }
 
